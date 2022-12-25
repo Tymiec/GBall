@@ -25,14 +25,17 @@ public class SpeedBoost : MonoBehaviour
             if (effectTimer > 0)
             {
                 effectTimer -= Time.deltaTime;
-                Debug.Log("Effect is active. Time remaining: " + effectTimer);
+                // if (effectTimer < 0.25)
+                // {
+                //     Debug.Log("Speed effect is active. Time remaining: " + effectTimer);
+                // }
                 Controller.Singleton.speed = changeTo;
 
             }
             else
             {
                 isEffectActive = false;
-                Debug.Log("Effect is inactive.");
+                Debug.Log("Speed effect is inactive.");
                 Controller.Singleton.speed = 3f;
             }
         }
@@ -43,7 +46,7 @@ public class SpeedBoost : MonoBehaviour
         // Check if the object that collided with the star is the player
         if (other.gameObject.CompareTag("Player")) 
         {
-            Debug.Log("Activate Effect!");
+            Debug.Log("Activate speed boost effect!");
             ActivateEffect();
         }
     }

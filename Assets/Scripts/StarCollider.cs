@@ -15,6 +15,8 @@ public class StarCollider : MonoBehaviour
             // If it is the player, then destroy the star
             Destroy(gameObject);
             Debug.Log("Star collected!");
+            // Add 1 to the score
+            Score.Singleton.AddScore();
         }
     }
 
