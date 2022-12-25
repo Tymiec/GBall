@@ -8,7 +8,7 @@ public class CamController : MonoBehaviour
     public Transform target;
 
     public float smoothSpeed = 0.125f;
-    public Vector3 offset = new Vector3(0, 5, -10);
+    public Vector3 offset = new Vector3(0, 3, -10);
 
     void FixedUpdate()
     {

@@ -7,7 +7,7 @@ public class JumpBoost : MonoBehaviour
 
     bool isEffectActive = false;
     [SerializeField] private float effectDuration = 5f;
-    [SerializeField] private float changeTo = 10f;
+    [SerializeField] private float changeTo = 15f;
     float effectTimer = 0f;
     public static Controller Singleton;
 
@@ -25,10 +25,10 @@ public class JumpBoost : MonoBehaviour
             if (effectTimer > 0)
             {
                 effectTimer -= Time.deltaTime;
-                // if (effectTimer < 0.25)
-                // {
-                //     Debug.Log("Jump effect is active. Time remaining: " + effectTimer);
-                // }
+                if (effectTimer < 0.1)
+                {
+                    Debug.Log("Jump effect is active. Time remaining: " + effectTimer);
+                }
                 Controller.Singleton.jumpHeight = changeTo;
 
             }
@@ -36,7 +36,7 @@ public class JumpBoost : MonoBehaviour
             {
                 isEffectActive = false;
                 Debug.Log("Jump effect is inactive.");
-                Controller.Singleton.jumpHeight = 3f;
+                Controller.Singleton.jumpHeight = 10f;
             }
         }
     }

@@ -10,7 +10,13 @@ public class Controller : MonoBehaviour
     [SerializeField] private Vector3 groundNormal;
 
     public float speed = 3f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 10f;
+    public float pressTime = 0f;
+    public float maxPressTime = 1f;
+
+    public double duration;
+    
+    private double power = 1f;
 
     public bool IsGrounded => groundNormal != Vector3.zero;
     public static Controller Singleton;
@@ -21,7 +27,7 @@ public class Controller : MonoBehaviour
         Singleton = this;
     }
 
-    // Update is called once per frame
+    
     private void FixedUpdate()
     {
         rb.velocity += input;
@@ -77,10 +83,33 @@ public class Controller : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded)
+        // measure the time between context.started and context.canceled
+        if (context.started && IsGrounded)
         {
-            // Debug.Log("Jump");
-            input += Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight) * (groundNormal + Vector3.up).normalized;
+            pressTime = Time.time;
+        }
+        if (context.canceled && IsGrounded)
+        {
+            duration = Time.time - pressTime;
+            // power = 1f;
+            Debug.Log("Duration: " + duration);
+            if (duration < maxPressTime)
+            {
+                power = duration / maxPressTime;
+                Debug.Log("Power: " + power);
+            }
+            else 
+            {
+                power = 1f;
+                Debug.Log("Power: " + power);
+            }
+        }
+        
+
+        // measure the time between context.started and context.canceled
+        if (context.canceled && IsGrounded)
+        {
+            input += Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight * (float)power) * (groundNormal + Vector3.up).normalized;
 
         }
     }

@@ -25,10 +25,10 @@ public class SpeedBoost : MonoBehaviour
             if (effectTimer > 0)
             {
                 effectTimer -= Time.deltaTime;
-                // if (effectTimer < 0.25)
-                // {
-                //     Debug.Log("Speed effect is active. Time remaining: " + effectTimer);
-                // }
+                if (effectTimer < 0.1)
+                {
+                    Debug.Log("Speed effect is active. Time remaining: " + effectTimer);
+                }
                 Controller.Singleton.speed = changeTo;
 
             }
