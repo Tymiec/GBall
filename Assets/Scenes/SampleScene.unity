@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 5, z: -10}
+  offset: {x: 0, y: 3, z: -10}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92044
+  m_Name: pb_Mesh28286
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1734,7 +1734,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -2321,7 +2321,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundNormal: {x: 0, y: 0, z: 0}
   speed: 3
-  jumpHeight: 3
+  jumpHeight: 10
+  pressTime: 0
+  maxPressTime: 1
+  duration: 0
 --- !u!135 &1659516944
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2968,6 +2971,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 309656016697631434, guid: 9dbb691420bb33f44bbfb751b61650cd,
+        type: 3}
+      propertyPath: changeTo
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 309656016697631434, guid: 9dbb691420bb33f44bbfb751b61650cd,
+        type: 3}
+      propertyPath: effectDuration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 309656016697631435, guid: 9dbb691420bb33f44bbfb751b61650cd,
         type: 3}
       propertyPath: m_Name
@@ -2988,6 +3001,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1044383197804961970, guid: f87b4b42f93f68a42af237fb0639828d,
+        type: 3}
+      propertyPath: effectDuration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1044383197804961974, guid: f87b4b42f93f68a42af237fb0639828d,
         type: 3}
       propertyPath: m_RootOrder
