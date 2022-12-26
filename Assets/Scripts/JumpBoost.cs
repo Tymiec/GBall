@@ -25,12 +25,11 @@ public class JumpBoost : MonoBehaviour
             if (effectTimer > 0)
             {
                 effectTimer -= Time.deltaTime;
-                if (effectTimer < 0.1)
-                {
-                    Debug.Log("Jump effect is active. Time remaining: " + effectTimer);
-                }
+                // if (effectTimer < 0.1)
+                // {
+                //     Debug.Log("Jump effect is active. Time remaining: " + effectTimer);
+                // }
                 Controller.Singleton.jumpHeight = changeTo;
-
             }
             else
             {

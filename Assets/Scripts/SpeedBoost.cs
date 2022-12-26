@@ -30,7 +30,6 @@ public class SpeedBoost : MonoBehaviour
                     Debug.Log("Speed effect is active. Time remaining: " + effectTimer);
                 }
                 Controller.Singleton.speed = changeTo;
-
             }
             else
             {
