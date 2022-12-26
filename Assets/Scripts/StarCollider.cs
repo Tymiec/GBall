@@ -6,6 +6,7 @@ public class StarCollider : MonoBehaviour
 {
     // The sound to play when the star is collected
     public AudioClip StarCollectedSound;
+    private bool destroyed = false;
     
     private void OnCollisionEnter(Collision other) 
     {
@@ -17,12 +18,16 @@ public class StarCollider : MonoBehaviour
             Debug.Log("Star collected!");
             // Add 1 to the score
             Score.Singleton.AddScore();
+            destroyed = true;
         }
     }
 
     private void OnDestroy() 
     {
         // Play the star collected sound
-        AudioSource.PlayClipAtPoint(StarCollectedSound, transform.position);
+        if (destroyed)
+        {
+           AudioSource.PlayClipAtPoint(StarCollectedSound, transform.position); 
+        }
     }
 }
