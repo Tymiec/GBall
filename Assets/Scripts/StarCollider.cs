@@ -8,7 +8,7 @@ public class StarCollider : MonoBehaviour
     public AudioClip StarCollectedSound;
     private bool destroyed = false;
     
-    private void OnCollisionEnter(Collision other) 
+    private void OnTriggerEnter(Collider other)
     {
         // Check if the object that collided with the star is the player
         if (other.gameObject.CompareTag("Player")) 

@@ -40,7 +40,7 @@ public class JumpBoost : MonoBehaviour
         }
     }
 
-        private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision other) 
     {
         // Check if the object that collided with the star is the player
         if (other.gameObject.CompareTag("Player")) 
