@@ -7,6 +7,7 @@ public class StarCollider : MonoBehaviour
     // The sound to play when the star is collected
     public AudioClip StarCollectedSound;
     private bool destroyed = false;
+    public int starID = -1;
     
     private void OnTriggerEnter(Collider other)
     {

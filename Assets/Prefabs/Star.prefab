@@ -209,3 +209,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StarCollectedSound: {fileID: 8300000, guid: 38dee28f7e78d7a42a7fa27d21e4f033, type: 3}
+  starID: -1
