@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Menu/MenuStyles.uss?fileID=7433441132597879392&amp;guid=358020736b0ad1f48af4374a96b72200&amp;type=3#MenuStyles" />
+    <ui:VisualElement name="LeftSection" style="width: 50%; background-color: rgba(0, 0, 0, 0.43); opacity: 1; display: flex; visibility: visible; overflow: visible; -unity-background-scale-mode: stretch-to-fill; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; height: 100%; margin-left: 50px;">
+        <ui:Label text="GBall" display-tooltip-when-elided="true" name="Title" enable-rich-text="true" style="align-items: center; -unity-font-style: bold; font-size: 72px; -unity-text-align: middle-center; color: rgb(0, 0, 0);" />
+        <ui:VisualElement name="Buttons" style="justify-content: center; height: auto; padding-bottom: 35%; width: auto; align-items: stretch; padding-left: 0; padding-right: 0; flex-grow: 1; -unity-text-align: middle-center; flex-shrink: 1; margin-left: 100px; margin-right: 100px;">
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" class="menu-button" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" class="menu-button" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
