@@ -11,8 +11,8 @@ public class MenuController : MonoBehaviour
     private Button _settingsButton;
     private Button _exitButton;
 
-    private AssetBundle myLoadedAssetBundle;
-    private string[] scenePaths;
+    // private AssetBundle myLoadedAssetBundle;
+    // private string[] scenePaths;
 
     private void Awake() 
     {
@@ -25,14 +25,14 @@ public class MenuController : MonoBehaviour
         _settingsButton.clicked += OnSettingsButtonClicked;
         _exitButton.clicked += OnExitButtonClicked;
 
-        myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/Scenes/");
-        scenePaths = myLoadedAssetBundle.GetAllScenePaths();
+        // myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/Scenes/");
+        // scenePaths = myLoadedAssetBundle.GetAllScenePaths();
     }
 
     private void OnPlayButtonClicked()
     {
         Debug.Log("Play button clicked");
-        SceneManager.LoadScene("Assets/Scenes/SampleScene.unity");
+        SceneManager.LoadScene(0);
     }
 
     private void OnSettingsButtonClicked()
