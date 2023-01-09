@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 685236301}
   - component: {fileID: 685236300}
   - component: {fileID: 685236303}
-  - component: {fileID: 685236304}
+  - component: {fileID: 685236306}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!95 &685236304
+--- !u!95 &685236306
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
