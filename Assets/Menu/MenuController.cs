@@ -38,6 +38,16 @@ public class MenuController : MonoBehaviour
         var backButton2 = _playButtons.Q<Button>("BackButton2");
         backButton.clicked += BackButtonOnClicked;
         backButton2.clicked += BackButtonOnClicked;
+
+        var LevelOne = _playButtons.Q<Button>("LevelOne");
+        var LevelTwo = _playButtons.Q<Button>("LevelTwo");
+        var LevelThree = _playButtons.Q<Button>("LevelThree");
+        var LevelFour = _playButtons.Q<Button>("LevelFour");
+
+        LevelOne.clicked += LevelOneClicked;
+        LevelTwo.clicked += LevelTwoClicked;
+        LevelThree.clicked += LevelThreeClicked;
+        LevelFour.clicked += LevelFourClicked;
     }
 
     private void OnPlayButtonClicked()
@@ -68,5 +78,32 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("Exit button clicked");
         Application.Quit();
+    }
+
+    private void LevelOneClicked()
+    {
+        SceneManager.LoadScene(0); 
+    }
+    
+    private void LevelTwoClicked()
+    {
+        // SceneManager.LoadScene(2);
+        Debug.Log("Load level two");
+        // change Level Two button color to green
+        
+
+        
+    }
+
+    private void LevelThreeClicked()
+    {
+        // SceneManager.LoadScene(3);
+        Debug.Log("Load level three");
+    }
+
+    private void LevelFourClicked()
+    {
+        // SceneManager.LoadScene(4);
+        Debug.Log("Load level four");
     }
 }
