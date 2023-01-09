@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Menu/MenuStyles.uss?fileID=7433441132597879392&amp;guid=358020736b0ad1f48af4374a96b72200&amp;type=3#MenuStyles" />
+    <ui:Button text="Level 1" display-tooltip-when-elided="true" name="LevelOne" class="menu-button" />
+    <ui:Button text="Level 2" display-tooltip-when-elided="true" name="LevelTwo" class="menu-button" />
+    <ui:Button text="Level 3" display-tooltip-when-elided="true" name="LevelThree" class="menu-button" />
+    <ui:Button text="Level 4" display-tooltip-when-elided="true" name="LevelFour" class="menu-button" />
+    <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton2" class="menu-button" />
+</ui:UXML>

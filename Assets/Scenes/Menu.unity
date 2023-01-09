@@ -588,17 +588,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 967750583}
   m_VersionIndex: 1316
   m_IsSelectable: 1
-  m_SelectedFaces: 01000000
-  m_SelectedEdges:
-  - a: 4
-    b: 5
-  - a: 6
-    b: 4
-  - a: 5
-    b: 7
-  - a: 7
-    b: 6
-  m_SelectedVertices: 04000000050000000600000007000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &576468563
 Transform:
   m_ObjectHideFlags: 0
@@ -1469,6 +1461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbed00e7fa1b25642b2b414714d36552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settingsButtonsTemplate: {fileID: 9197481963319205126, guid: 006fcbfd2db55b84ab0d99aed365e591,
+    type: 3}
+  _playButtonsTemplate: {fileID: 9197481963319205126, guid: 438bcc1cbe6713b44bd2f8a87e796ab4,
+    type: 3}
 --- !u!1 &2069604974
 GameObject:
   m_ObjectHideFlags: 0

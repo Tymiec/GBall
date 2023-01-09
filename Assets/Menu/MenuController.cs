@@ -11,10 +11,9 @@ public class MenuController : MonoBehaviour
     private Button _settingsButton;
     private Button _exitButton;
     private VisualElement _buttonsWrapper;
-    [SerializeField]
-    private VisualTreeAsset _settingsButtonsTemplate;
+    [SerializeField] private VisualTreeAsset _settingsButtonsTemplate;
     private VisualElement _settingsButtons;
-    private VisualTreeAsset _playButtonsTemplate;
+    [SerializeField] private VisualTreeAsset _playButtonsTemplate;
     private VisualElement _playButtons;
 
     // private AssetBundle myLoadedAssetBundle;
@@ -36,12 +35,16 @@ public class MenuController : MonoBehaviour
         _exitButton.clicked += OnExitButtonClicked;
 
         var backButton = _settingsButtons.Q<Button>("BackButton");
+        var backButton2 = _playButtons.Q<Button>("BackButton2");
         backButton.clicked += BackButtonOnClicked;
+        backButton2.clicked += BackButtonOnClicked;
     }
 
     private void OnPlayButtonClicked()
     {
         Debug.Log("Play button clicked");
+        _buttonsWrapper.Clear();
+        _buttonsWrapper.Add(_playButtons);
         // SceneManager.LoadScene(0);
     }
 
