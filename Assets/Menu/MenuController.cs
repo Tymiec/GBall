@@ -10,6 +10,12 @@ public class MenuController : MonoBehaviour
     private Button _playButton;
     private Button _settingsButton;
     private Button _exitButton;
+    private VisualElement _buttonsWrapper;
+    [SerializeField]
+    private VisualTreeAsset _settingsButtonsTemplate;
+    private VisualElement _settingsButtons;
+    private VisualTreeAsset _playButtonsTemplate;
+    private VisualElement _playButtons;
 
     // private AssetBundle myLoadedAssetBundle;
     // private string[] scenePaths;
@@ -17,32 +23,47 @@ public class MenuController : MonoBehaviour
     private void Awake() 
     {
         _doc = GetComponent<UIDocument>();
+        _buttonsWrapper = _doc.rootVisualElement.Q<VisualElement>("Buttons");
         _playButton = _doc.rootVisualElement.Q<Button>("PlayButton");
         _settingsButton = _doc.rootVisualElement.Q<Button>("SettingsButton");
         _exitButton = _doc.rootVisualElement.Q<Button>("ExitButton");
+
+        _settingsButtons = _settingsButtonsTemplate.CloneTree();
+        _playButtons = _playButtonsTemplate.CloneTree();
 
         _playButton.clicked += OnPlayButtonClicked;
         _settingsButton.clicked += OnSettingsButtonClicked;
         _exitButton.clicked += OnExitButtonClicked;
 
-        // myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/Scenes/");
-        // scenePaths = myLoadedAssetBundle.GetAllScenePaths();
+        var backButton = _settingsButtons.Q<Button>("BackButton");
+        backButton.clicked += BackButtonOnClicked;
     }
 
     private void OnPlayButtonClicked()
     {
         Debug.Log("Play button clicked");
-        SceneManager.LoadScene(0);
+        // SceneManager.LoadScene(0);
     }
 
     private void OnSettingsButtonClicked()
     {
         Debug.Log("Settings button clicked");
+        _buttonsWrapper.Clear();
+        _buttonsWrapper.Add(_settingsButtons);
+    }
+
+    private void BackButtonOnClicked()
+    {
+        Debug.Log("Back button clicked");
+        _buttonsWrapper.Clear();
+        _buttonsWrapper.Add(_playButton);
+        _buttonsWrapper.Add(_settingsButton);
+        _buttonsWrapper.Add(_exitButton);
     }
 
     private void OnExitButtonClicked()
     {
         Debug.Log("Exit button clicked");
-
+        Application.Quit();
     }
 }
